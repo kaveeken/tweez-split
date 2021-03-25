@@ -12,6 +12,7 @@ def find_pulls(signal, bins=100, stepsize=1000, verbose=False):
     low_signal = bars[1][min(highest, second) + 1]
     high_signal = bars[1][max(highest, second)]
 
+    print(bars[1])
     pulling = True
     relaxing = True
     pulls = []
@@ -53,3 +54,6 @@ def read_csv(fname):
         curves[identifier] = {'dist': [float(x) for x in dist[1:]],
                               'force': [float(x) for x in force[1:]]}
     return curves
+
+# def write_hdp5(fname, curves):
+#     for curve in curves.items():
